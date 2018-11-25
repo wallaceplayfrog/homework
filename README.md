@@ -13,3 +13,4 @@
 文件读写进度：
 	创建了配置文件和相应的IOtest.py
 因为某些原因重写了update information
+快被整疯了，以后一定一定记得pushpull，无奈删除重新创建
