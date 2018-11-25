@@ -5,31 +5,31 @@ import tkinter.messagebox as messagebox
 
 #==========================school class=============================== 
 class Major(object):
-    def __init__(self, Majorcode, Majorname, Majornum, Majorless):
-        self.Majorcode = Majorcode
-        self.Majorname = Majorname       
-        self.Majornum = Majornum
-        self.Majorless = Majorless
+    def __init__(self, MajorCode, MajorName, MajorNum, MajorLess):
+        self.MajorCode = MajorCode
+        self.MajorName = MajorName       
+        self.MajorNum = MajorNum
+        self.MajorLess = MajorLess
         self.mates = []
 
     def add(self, student):
         self.mates.append(student)
-        self.Majorless -= 1
+        self.MajorLess -= 1
     
-    def isFull(self):
-        if self.less == 0:
-            return True
-        else:
+    def isNotFull(self):
+        if self.MajorLess == 0:
             return False
+        else:
+            return True
 
 class SchIfo(object):
     def __init__(self, schCode, schName):
         self.schCode = schCode
         self.schName = schName
-        self.major = generateMajor()
+        self.major = []
     
-    def addMajor(self, Mcode, Mname, Mnum):
-        self.major[Mcode] = [Mname,Mnum]
+    def addMajor(self, MajorCode, MajorName, MajorNum, MajorLess):
+        self.major.append(Major(MajorCode, MajorName, MajorNum, MajorLess))
     
     def setFullMajor(self, fullmajor):
         self.major = fullmajor
@@ -37,33 +37,7 @@ class SchIfo(object):
     def myPrint(self):
         print(self.schCode, self.schName, '\n')
         for key in self.major:
-            print(key, self.major[key])
-   
-def generateMajor():
-    majorString = {1012:('major0'), 
-                    2125:('major1'), 
-                    4562:('major2'), 
-                    1534:('major3'), 
-                    1234:('major4'), 
-                    2134:('major5'), 
-                    4897:('major6'), 
-                    1543:('major7'), 
-                    4782:('major8'), 
-                    1456:('major9'),
-                    5487:('major10'),
-                    4587:('major12'),
-                    6985:('major13'),
-                    2145:('major14'),
-                    3526:('major15'),
-                    8547:('major16')}
-    retMajor = []
-
-    for code in majorString:
-        num = random.randint(5,10)#随机生成计划录取人数
-        lessnum = num
-        retMajor.append(Major(code, majorString[code], num, lessnum))
-
-    return retMajor
+            print(key, self.major[key])  
 
 #====================================student class====================
 class StuIfo(object):
@@ -87,17 +61,8 @@ class StuIfo(object):
     def __le__(self,other):#oprator <= 
         return self.scores['total'] <= other.scores['total']   
 
-    def setWill(self, wills):
-        self.will.extend(wills)
-
-    def setScores(self, subject, score):
-        self.scores[subject] = score
-    
-    def getName(self):
-        return self.name
-
-    def getScore(self, subject):
-        return self.scores.get(subject, -1)
+    def addWill(self, will):
+        self.will.append(will)
     
     def setFullscore(self, fullscore):
         self.scores = fullscore
@@ -112,85 +77,6 @@ class StuIfo(object):
             tmpinf.append('%s' %(self.scores[key]))
         tmpinf.append('  '.join('%s' %id for id in self.will))
         return tmpinf
-
-def generateWill():
-    willstring = [1012, 2125, 4562, 1534, 1234, 2134, 4897, 1543, 4782, 1456, 5487, 4587, 6985, 2145, 3526, 8547]
-    willLen = 5
-    will = []
-    idx = 0
-    while idx < willLen:
-        willidx = random.randint(0, len(willstring)-1)
-        temp = willstring[willidx]
-        willstring.pop(willidx)
-        will.append(temp)        
-        idx = idx + 1
-    return will
-
-#随机生成姓名
-def generateName():
-    nameString = 'abcdefghijklmnopqrstuvwxyz'
-    nameLen = random.randint(2,6)
-
-    retName = ''
-
-    idx = 0
-    while idx < nameLen:
-        strIdx = random.randint(0,25)
-        retName = retName + nameString[strIdx]
-        idx = idx + 1
-        
-    return retName
-
-#随机生成学号
-def generateSnum():   
-    return random.randint(1000,9999)
-
-#构造年龄
-def generateAge():
-    return random.randint(18,20)
-    
-#构造性别
-def generateSex():
-    constSex = ['male','female']
-    prob = random.uniform(0,1)
-    if prob >= 0.5:
-        return 'male'
-    else:
-        return 'female'
-
-#随机生成4个成绩
-def generate4Score():
-    chineseScore = random.randint(80,150)
-    mathScore = random.randint(80,150)
-    englishScore = random.randint(80,150)
-    compScore = random.randint(150,300)
-
-    return {'total': chineseScore + mathScore + englishScore + compScore, 
-            'chinese': chineseScore, 
-            'math': mathScore, 
-            'english': englishScore, 
-            'comprehensive': compScore}
-#随机生成信息
-class RandIfo(object):
-    def __init__(self, idx):
-        self.mates = []
-        self.id = idx
-        idx = 0
-        while idx < 140:
-            name = generateName()
-            age = generateAge()
-            sex = generateSex()
-            snum = generateSnum()
-            scores = generate4Score()
-            will = generateWill()
-
-            tmpStuIfo = StuIfo(name, age, snum, sex)
-            tmpStuIfo.setFullscore(scores)
-            tmpStuIfo.setWill(will)
-
-            self.mates.append(tmpStuIfo)
-
-            idx = idx + 1
              
 #==========================myheap class=============================
 class MaxHeap(object): 
@@ -244,7 +130,7 @@ def bjutAdmit(stuHeapify, school):
     admitNum = 0
     for major in school.major:
         #计数
-        admitNum += major.Majornum 
+        admitNum += major.MajorNum 
     while admitNum > 0 and stuHeapify.size() > 0:
         tmpStu = stuHeapify.pop()
         tmpWill = []
@@ -258,7 +144,7 @@ def bjutAdmit(stuHeapify, school):
             else:           
                 op = tmpWill.pop(0)
                 for major in school.major:
-                    if op == major.Majorcode and major.Majorless > 0:
+                    if op == major.MajorCode and major.isNotFull():
                         tmpStu.isAdmit = True
                         major.add(tmpStu)
                         admitNum -= 1
@@ -399,7 +285,7 @@ class CreatWindow(Frame):
         self.listbox0.delete(0, END)
         self.listbox0.insert(END, ['SchoolCode:%s' %bjut.schCode], ['SchoolName:%s' %bjut.schName], ['MajorInformation:'], ['    code:name,num'])
         for major in bjut.major:
-            self.listbox0.insert(END, ['    %s:%s,%s'%(major.Majorcode, major.Majorname, major.Majornum)])    
+            self.listbox0.insert(END, ['    %s:%s,%s'%(major.MajorCode, major.MajorName, major.MajorNum)])    
         messagebox.showinfo("Message","Operation succeeded!") #弹出消息窗口
         
     def btn1Inf(self):       
@@ -409,7 +295,7 @@ class CreatWindow(Frame):
         self.btn5['state'] = 'normal'
         
         self.listbox1.delete(0, END)
-        for student in myClass.mates:
+        for student in myClass:
             self.listbox1.insert(END, student.strIfo())
         messagebox.showinfo("Message","Operation succeeded!") #弹出消息窗口        
 
@@ -418,11 +304,11 @@ class CreatWindow(Frame):
         self.listbox1.delete(0, END)
         
         for major in bjut.major:
-            self.listbox0.insert(END, ['Majorcode:%s' %major.Majorcode], ['Majorname:%s' %major.Majorname], ['less:%s' %major.Majorless], [''])
+            self.listbox0.insert(END, ['MajorCode:%s' %major.MajorCode], ['MajorName:%s' %major.MajorName], ['less:%s' %major.MajorLess], [''])
             for student in major.mates:
                 tmplist = student.strIfo()
                 tmplist.pop()
-                tmplist.append(str('%s' %major.Majorcode))
+                tmplist.append(str('%s' %major.MajorCode))
                 self.listbox1.insert(END, tmplist)
         
         messagebox.showinfo("Message","Operation succeeded!") #弹出消息窗口       
@@ -444,22 +330,50 @@ class CreatWindow(Frame):
         self.listbox1.delete(0, END)
         
         for major in bjut.major:
-            self.listbox0.insert(END, ['Majorcode:%s' %major.Majorcode], ['Majorname:%s' %major.Majorname], ['less:%s' %major.Majorless], [''])
+            self.listbox0.insert(END, ['MajorCode:%s' %major.MajorCode], ['MajorName:%s' %major.MajorName], ['less:%s' %major.MajorLess], [''])
             for student in major.mates:
                 tmplist = student.strIfo()
                 tmplist.pop()
-                tmplist.append(str('%s' %major.Majorcode))
+                tmplist.append(str('%s' %major.MajorCode))
                 self.listbox1.insert(END, tmplist)
     
-        messagebox.showinfo("Message","Operation succeeded!") #弹出消息窗口               
+        messagebox.showinfo("Message","Operation succeeded!") #弹出消息窗口  
+                     
 #===============================main================================
 if __name__ == '__main__':  
-    bjut = SchIfo(1049, 'bjut')
-    myClass = RandIfo('2018')
+    f = open('/home/yanglin/homework/school information.txt', 'r')
+    f_list = f.readline().strip().split()
+    SchoolName = f_list.pop()
+    SchoolCode = int(f_list.pop())
+    bjut = SchIfo(SchoolCode, SchoolName)
+    for line in f.readlines():
+        line_list = line.strip().split()
+        MajorLess = int(line_list.pop())
+        MajorNum = int(line_list.pop())
+        MajorName = line_list.pop()
+        MajorCode = int(line_list.pop())
+        bjut.addMajor(MajorCode, MajorName, MajorNum, MajorLess)
+    f.close()
+
+    f = open('/home/yanglin/homework/student information.txt', 'r')
+    myClass = []
+    f_list1 = f.readlines()
+    while len(f_list1) > 0:
+        basicinf = f_list1.pop(0).strip().split()
+        name = basicinf.pop(0)
+        age = int(basicinf.pop(0))
+        snum = int(basicinf.pop(0))
+        sex = basicinf.pop(0)
+        tmpstudent = StuIfo(name, age, snum, sex)
+        tmpstudent.setFullscore(eval(f_list1.pop(0).strip()))
+        for will in f_list1.pop(0).strip().strip("[]").split(","):
+            tmpstudent.addWill(int(will))
+        myClass.append(tmpstudent)
+    f.close()
     
     retryHeap = MaxHeap()
     tmpHeap = MaxHeap()
-    for student in myClass.mates:
+    for student in myClass:
        tmpHeap.add(student)
     bjutAdmit(tmpHeap, bjut)
 
