@@ -1,0 +1,420 @@
+phkboi 7355 18 male
+{'total': 472, 'chinese': 127, 'math': 107, 'english': 88, 'comprehensive': 150}
+[4562, 1534, 1543, 1234, 8547]
+ali 1072 19 male
+{'total': 620, 'chinese': 121, 'math': 91, 'english': 111, 'comprehensive': 297}
+[2134, 6985, 4897, 5487, 3526]
+cj 1572 18 male
+{'total': 584, 'chinese': 80, 'math': 88, 'english': 122, 'comprehensive': 294}
+[5487, 6985, 2125, 4562, 2145]
+wuf 1387 20 female
+{'total': 591, 'chinese': 125, 'math': 143, 'english': 86, 'comprehensive': 237}
+[2134, 1543, 1534, 2145, 8547]
+noc 3229 19 female
+{'total': 570, 'chinese': 99, 'math': 94, 'english': 146, 'comprehensive': 231}
+[1534, 3526, 4562, 4897, 1456]
+ojl 5677 18 female
+{'total': 552, 'chinese': 149, 'math': 102, 'english': 110, 'comprehensive': 191}
+[1234, 5487, 1012, 2134, 2125]
+sjzy 5790 19 male
+{'total': 698, 'chinese': 149, 'math': 129, 'english': 134, 'comprehensive': 286}
+[1534, 4562, 6985, 2145, 1456]
+vpjem 8107 20 male
+{'total': 533, 'chinese': 116, 'math': 133, 'english': 87, 'comprehensive': 197}
+[1456, 1534, 8547, 3526, 4587]
+pxk 5794 18 male
+{'total': 545, 'chinese': 148, 'math': 114, 'english': 96, 'comprehensive': 187}
+[2125, 4587, 1234, 4897, 2134]
+aqtpyc 2395 19 female
+{'total': 587, 'chinese': 108, 'math': 124, 'english': 94, 'comprehensive': 261}
+[4587, 1534, 4562, 1456, 1543]
+cvhi 6557 20 female
+{'total': 569, 'chinese': 94, 'math': 89, 'english': 147, 'comprehensive': 239}
+[6985, 1543, 1534, 2134, 1012]
+jp 7509 18 female
+{'total': 506, 'chinese': 122, 'math': 85, 'english': 93, 'comprehensive': 206}
+[4897, 2145, 1456, 1543, 4587]
+ckq 1693 19 female
+{'total': 649, 'chinese': 145, 'math': 116, 'english': 148, 'comprehensive': 240}
+[8547, 4782, 4897, 2125, 1456]
+hbs 4879 20 male
+{'total': 538, 'chinese': 146, 'math': 97, 'english': 103, 'comprehensive': 192}
+[1543, 1012, 1456, 1234, 8547]
+yavp 7340 20 female
+{'total': 613, 'chinese': 137, 'math': 114, 'english': 111, 'comprehensive': 251}
+[2134, 1534, 1234, 1543, 8547]
+jeiftp 3890 19 female
+{'total': 561, 'chinese': 140, 'math': 92, 'english': 91, 'comprehensive': 238}
+[3526, 6985, 8547, 2125, 1456]
+vjqgh 1565 20 female
+{'total': 487, 'chinese': 86, 'math': 135, 'english': 100, 'comprehensive': 166}
+[4782, 1543, 8547, 2125, 3526]
+yr 4217 19 male
+{'total': 546, 'chinese': 104, 'math': 122, 'english': 135, 'comprehensive': 185}
+[1012, 3526, 4897, 2125, 2134]
+iexl 5775 18 male
+{'total': 556, 'chinese': 99, 'math': 122, 'english': 127, 'comprehensive': 208}
+[1534, 4782, 1543, 1456, 4897]
+nzdx 9549 20 female
+{'total': 666, 'chinese': 129, 'math': 138, 'english': 102, 'comprehensive': 297}
+[2125, 4782, 1234, 1456, 6985]
+vqt 6573 18 female
+{'total': 497, 'chinese': 80, 'math': 114, 'english': 81, 'comprehensive': 222}
+[3526, 4897, 1543, 1534, 8547]
+fsllj 5044 20 female
+{'total': 614, 'chinese': 108, 'math': 134, 'english': 99, 'comprehensive': 273}
+[2134, 6985, 4782, 3526, 2125]
+st 3079 19 male
+{'total': 549, 'chinese': 94, 'math': 104, 'english': 85, 'comprehensive': 266}
+[2125, 8547, 1012, 4782, 2134]
+ah 3510 20 female
+{'total': 633, 'chinese': 92, 'math': 111, 'english': 149, 'comprehensive': 281}
+[8547, 1234, 1456, 2134, 4897]
+qzzkkk 1109 19 female
+{'total': 582, 'chinese': 137, 'math': 83, 'english': 111, 'comprehensive': 251}
+[3526, 4587, 2125, 1534, 4897]
+ndc 3361 19 female
+{'total': 523, 'chinese': 107, 'math': 116, 'english': 90, 'comprehensive': 210}
+[1234, 2145, 1012, 6985, 1534]
+ipz 9392 19 female
+{'total': 636, 'chinese': 135, 'math': 135, 'english': 129, 'comprehensive': 237}
+[2145, 2125, 2134, 3526, 5487]
+hz 4446 19 female
+{'total': 540, 'chinese': 148, 'math': 120, 'english': 83, 'comprehensive': 189}
+[4562, 5487, 2134, 6985, 3526]
+xyku 9777 18 male
+{'total': 472, 'chinese': 110, 'math': 91, 'english': 83, 'comprehensive': 188}
+[2125, 4562, 8547, 1456, 1012]
+su 1416 18 female
+{'total': 609, 'chinese': 105, 'math': 117, 'english': 108, 'comprehensive': 279}
+[1456, 2134, 4897, 1012, 4782]
+xrzyww 3017 18 female
+{'total': 452, 'chinese': 86, 'math': 104, 'english': 112, 'comprehensive': 150}
+[3526, 1234, 4587, 5487, 4897]
+ah 2431 19 female
+{'total': 557, 'chinese': 145, 'math': 142, 'english': 118, 'comprehensive': 152}
+[3526, 4587, 2134, 1543, 6985]
+udfkx 1803 18 female
+{'total': 621, 'chinese': 113, 'math': 139, 'english': 133, 'comprehensive': 236}
+[1456, 1012, 2134, 3526, 1534]
+uofv 1642 19 male
+{'total': 626, 'chinese': 148, 'math': 109, 'english': 131, 'comprehensive': 238}
+[4587, 3526, 5487, 1234, 1456]
+wzjx 6917 19 female
+{'total': 614, 'chinese': 103, 'math': 150, 'english': 150, 'comprehensive': 211}
+[4562, 3526, 4897, 2145, 1234]
+efoseb 4000 18 female
+{'total': 552, 'chinese': 92, 'math': 99, 'english': 150, 'comprehensive': 211}
+[1234, 4782, 3526, 4587, 6985]
+eec 1485 19 female
+{'total': 523, 'chinese': 132, 'math': 81, 'english': 123, 'comprehensive': 187}
+[5487, 4587, 2125, 4897, 2134]
+nh 7563 20 male
+{'total': 544, 'chinese': 92, 'math': 128, 'english': 91, 'comprehensive': 233}
+[1543, 2125, 4782, 2145, 1534]
+dgtjl 6011 18 male
+{'total': 509, 'chinese': 139, 'math': 83, 'english': 99, 'comprehensive': 188}
+[8547, 5487, 1012, 1534, 4587]
+vkbxvd 8516 19 female
+{'total': 568, 'chinese': 95, 'math': 97, 'english': 109, 'comprehensive': 267}
+[1456, 1012, 3526, 4897, 4782]
+tlk 2669 19 male
+{'total': 577, 'chinese': 132, 'math': 144, 'english': 83, 'comprehensive': 218}
+[4897, 1543, 1534, 4782, 4562]
+pgkr 7757 20 male
+{'total': 583, 'chinese': 127, 'math': 146, 'english': 138, 'comprehensive': 172}
+[8547, 1534, 2125, 1012, 4897]
+giy 1289 20 male
+{'total': 480, 'chinese': 131, 'math': 83, 'english': 106, 'comprehensive': 160}
+[1534, 1543, 4562, 2125, 6985]
+cnrzg 2984 20 female
+{'total': 550, 'chinese': 125, 'math': 123, 'english': 93, 'comprehensive': 209}
+[2145, 4562, 2125, 1534, 3526]
+ahze 3756 20 female
+{'total': 515, 'chinese': 97, 'math': 121, 'english': 80, 'comprehensive': 217}
+[4782, 1012, 2134, 1534, 4587]
+qr 9433 20 female
+{'total': 502, 'chinese': 129, 'math': 106, 'english': 96, 'comprehensive': 171}
+[1234, 6985, 4782, 1012, 2125]
+znsm 7848 18 male
+{'total': 563, 'chinese': 87, 'math': 143, 'english': 143, 'comprehensive': 190}
+[4782, 2125, 3526, 4587, 4897]
+ufc 7589 18 male
+{'total': 534, 'chinese': 100, 'math': 101, 'english': 117, 'comprehensive': 216}
+[1543, 1012, 1534, 1456, 6985]
+yzdj 9467 19 female
+{'total': 502, 'chinese': 88, 'math': 141, 'english': 110, 'comprehensive': 163}
+[4562, 2125, 4782, 4587, 1234]
+jlitfk 9842 19 female
+{'total': 601, 'chinese': 95, 'math': 139, 'english': 110, 'comprehensive': 257}
+[6985, 1543, 8547, 4782, 4562]
+pcqqoj 6445 19 female
+{'total': 659, 'chinese': 123, 'math': 136, 'english': 111, 'comprehensive': 289}
+[1543, 4897, 2125, 1534, 4562]
+mocf 8658 19 female
+{'total': 582, 'chinese': 99, 'math': 120, 'english': 132, 'comprehensive': 231}
+[1456, 5487, 2134, 4782, 2145]
+erd 7953 20 female
+{'total': 488, 'chinese': 95, 'math': 86, 'english': 124, 'comprehensive': 183}
+[1543, 8547, 2125, 1456, 4587]
+nf 4326 19 male
+{'total': 537, 'chinese': 117, 'math': 139, 'english': 118, 'comprehensive': 163}
+[6985, 2134, 8547, 5487, 1234]
+cmcao 9508 18 male
+{'total': 600, 'chinese': 99, 'math': 89, 'english': 128, 'comprehensive': 284}
+[4562, 3526, 4897, 5487, 1012]
+tsnups 3552 19 female
+{'total': 646, 'chinese': 111, 'math': 124, 'english': 111, 'comprehensive': 300}
+[2134, 6985, 2145, 8547, 5487]
+tvdrt 1437 18 male
+{'total': 536, 'chinese': 130, 'math': 92, 'english': 105, 'comprehensive': 209}
+[1234, 2125, 6985, 8547, 1543]
+ari 2118 19 female
+{'total': 597, 'chinese': 112, 'math': 120, 'english': 110, 'comprehensive': 255}
+[1534, 1456, 5487, 2145, 4782]
+fitwov 9837 18 male
+{'total': 519, 'chinese': 95, 'math': 95, 'english': 113, 'comprehensive': 216}
+[2134, 1456, 2145, 1012, 1543]
+lvkqwr 2144 19 male
+{'total': 660, 'chinese': 146, 'math': 135, 'english': 114, 'comprehensive': 265}
+[4562, 6985, 4782, 3526, 8547]
+qqrx 7734 19 female
+{'total': 589, 'chinese': 143, 'math': 121, 'english': 110, 'comprehensive': 215}
+[5487, 6985, 1234, 3526, 1534]
+laywlu 7142 19 female
+{'total': 584, 'chinese': 84, 'math': 114, 'english': 90, 'comprehensive': 296}
+[4782, 1012, 1543, 4587, 1234]
+fi 2394 19 male
+{'total': 550, 'chinese': 81, 'math': 128, 'english': 149, 'comprehensive': 192}
+[2145, 1234, 8547, 4897, 2134]
+ojbfhs 2596 19 female
+{'total': 599, 'chinese': 101, 'math': 106, 'english': 135, 'comprehensive': 257}
+[8547, 2145, 4782, 1543, 1012]
+yhwk 4403 20 male
+{'total': 515, 'chinese': 92, 'math': 108, 'english': 95, 'comprehensive': 220}
+[4562, 2134, 6985, 1534, 5487]
+idgt 8781 19 male
+{'total': 604, 'chinese': 112, 'math': 88, 'english': 127, 'comprehensive': 277}
+[1534, 1543, 4897, 1456, 2134]
+ypsrqx 2610 20 male
+{'total': 650, 'chinese': 130, 'math': 121, 'english': 102, 'comprehensive': 297}
+[4587, 2125, 4897, 1234, 2145]
+ilhyhj 9153 20 female
+{'total': 541, 'chinese': 137, 'math': 136, 'english': 102, 'comprehensive': 166}
+[6985, 4897, 4587, 4782, 1543]
+mhi 7385 18 male
+{'total': 657, 'chinese': 105, 'math': 141, 'english': 134, 'comprehensive': 277}
+[2125, 1543, 5487, 1456, 1234]
+luiseg 4078 19 male
+{'total': 483, 'chinese': 98, 'math': 83, 'english': 106, 'comprehensive': 196}
+[1543, 4587, 1456, 1534, 4897]
+phwttc 2678 19 male
+{'total': 538, 'chinese': 89, 'math': 94, 'english': 97, 'comprehensive': 258}
+[2134, 1456, 5487, 6985, 2125]
+vsun 4294 20 female
+{'total': 578, 'chinese': 141, 'math': 82, 'english': 84, 'comprehensive': 271}
+[4897, 1234, 4782, 2125, 4587]
+xmy 3802 18 female
+{'total': 542, 'chinese': 91, 'math': 117, 'english': 124, 'comprehensive': 210}
+[4782, 4897, 1534, 4587, 4562]
+evh 8471 20 male
+{'total': 562, 'chinese': 150, 'math': 84, 'english': 104, 'comprehensive': 224}
+[4782, 4562, 6985, 8547, 1012]
+xqwlfp 7557 18 female
+{'total': 474, 'chinese': 114, 'math': 82, 'english': 126, 'comprehensive': 152}
+[4587, 4562, 3526, 5487, 4782]
+zny 7775 18 female
+{'total': 540, 'chinese': 101, 'math': 139, 'english': 110, 'comprehensive': 190}
+[4897, 3526, 1234, 1534, 5487]
+nenx 5793 18 male
+{'total': 533, 'chinese': 93, 'math': 137, 'english': 83, 'comprehensive': 220}
+[4897, 4782, 2125, 6985, 4587]
+eyxq 5263 18 male
+{'total': 625, 'chinese': 135, 'math': 110, 'english': 90, 'comprehensive': 290}
+[3526, 4782, 2145, 1534, 6985]
+juapmz 4490 18 female
+{'total': 551, 'chinese': 99, 'math': 110, 'english': 114, 'comprehensive': 228}
+[1543, 4782, 5487, 3526, 4562]
+xnfqbl 4222 19 female
+{'total': 501, 'chinese': 81, 'math': 106, 'english': 104, 'comprehensive': 210}
+[2145, 2125, 5487, 1543, 4587]
+gqqsxh 3147 20 male
+{'total': 658, 'chinese': 147, 'math': 124, 'english': 120, 'comprehensive': 267}
+[1234, 6985, 4562, 2125, 3526]
+vm 4764 18 male
+{'total': 591, 'chinese': 137, 'math': 102, 'english': 118, 'comprehensive': 234}
+[4587, 3526, 1534, 2145, 1012]
+zaxels 8634 20 male
+{'total': 562, 'chinese': 92, 'math': 127, 'english': 111, 'comprehensive': 232}
+[6985, 1012, 4782, 4897, 3526]
+jyg 4003 18 male
+{'total': 528, 'chinese': 91, 'math': 114, 'english': 136, 'comprehensive': 187}
+[8547, 1456, 1234, 2134, 1543]
+ikaiql 6776 18 male
+{'total': 634, 'chinese': 138, 'math': 141, 'english': 137, 'comprehensive': 218}
+[1534, 3526, 6985, 2134, 5487]
+npg 2090 20 male
+{'total': 644, 'chinese': 116, 'math': 130, 'english': 134, 'comprehensive': 264}
+[2145, 1234, 3526, 5487, 2134]
+pk 2031 20 male
+{'total': 647, 'chinese': 101, 'math': 112, 'english': 138, 'comprehensive': 296}
+[5487, 2145, 1234, 2125, 3526]
+ekrxut 9917 19 male
+{'total': 618, 'chinese': 133, 'math': 120, 'english': 100, 'comprehensive': 265}
+[1234, 4897, 6985, 1012, 1543]
+lyolx 3589 18 female
+{'total': 623, 'chinese': 85, 'math': 128, 'english': 121, 'comprehensive': 289}
+[1234, 1543, 2125, 2134, 1012]
+kze 6221 18 male
+{'total': 599, 'chinese': 89, 'math': 108, 'english': 136, 'comprehensive': 266}
+[1543, 1234, 8547, 2125, 2145]
+zjzrd 2993 18 male
+{'total': 590, 'chinese': 96, 'math': 137, 'english': 90, 'comprehensive': 267}
+[1012, 3526, 2134, 4897, 6985]
+pfa 3098 20 male
+{'total': 502, 'chinese': 135, 'math': 85, 'english': 114, 'comprehensive': 168}
+[4782, 2125, 8547, 5487, 4562]
+nfgs 2222 19 male
+{'total': 451, 'chinese': 101, 'math': 88, 'english': 97, 'comprehensive': 165}
+[4897, 4782, 4587, 1012, 2125]
+juij 7762 18 female
+{'total': 535, 'chinese': 149, 'math': 93, 'english': 128, 'comprehensive': 165}
+[4782, 5487, 1543, 4562, 1012]
+bs 4277 18 female
+{'total': 435, 'chinese': 92, 'math': 95, 'english': 92, 'comprehensive': 156}
+[4782, 1234, 4562, 3526, 1456]
+wos 4156 20 male
+{'total': 569, 'chinese': 134, 'math': 85, 'english': 108, 'comprehensive': 242}
+[1234, 4587, 1534, 4782, 1456]
+ro 5891 19 male
+{'total': 577, 'chinese': 81, 'math': 142, 'english': 81, 'comprehensive': 273}
+[3526, 2134, 4782, 2125, 8547]
+uam 9321 19 male
+{'total': 579, 'chinese': 100, 'math': 128, 'english': 125, 'comprehensive': 226}
+[2145, 1543, 1456, 4562, 4897]
+twfgg 6197 20 male
+{'total': 601, 'chinese': 115, 'math': 91, 'english': 143, 'comprehensive': 252}
+[6985, 1012, 1543, 3526, 5487]
+de 8682 20 female
+{'total': 564, 'chinese': 80, 'math': 144, 'english': 121, 'comprehensive': 219}
+[4782, 1543, 8547, 2134, 4562]
+msq 1658 18 female
+{'total': 477, 'chinese': 98, 'math': 117, 'english': 89, 'comprehensive': 173}
+[4587, 6985, 1534, 1234, 1012]
+sympj 3583 18 male
+{'total': 632, 'chinese': 143, 'math': 113, 'english': 145, 'comprehensive': 231}
+[2134, 1012, 2145, 4562, 2125]
+ubzmk 7856 19 male
+{'total': 526, 'chinese': 103, 'math': 102, 'english': 108, 'comprehensive': 213}
+[6985, 1543, 8547, 1234, 2145]
+ejpv 1494 20 female
+{'total': 546, 'chinese': 104, 'math': 127, 'english': 146, 'comprehensive': 169}
+[1534, 5487, 4587, 2125, 2145]
+mtx 7472 18 male
+{'total': 573, 'chinese': 93, 'math': 91, 'english': 120, 'comprehensive': 269}
+[2145, 1234, 3526, 8547, 1012]
+stzg 1078 18 female
+{'total': 617, 'chinese': 131, 'math': 120, 'english': 93, 'comprehensive': 273}
+[6985, 1012, 2145, 3526, 4587]
+jci 7343 19 male
+{'total': 479, 'chinese': 83, 'math': 89, 'english': 86, 'comprehensive': 221}
+[4587, 1543, 3526, 5487, 1012]
+fhiolm 4897 19 female
+{'total': 538, 'chinese': 93, 'math': 101, 'english': 94, 'comprehensive': 250}
+[4562, 3526, 1534, 1234, 1543]
+ow 2185 18 male
+{'total': 584, 'chinese': 142, 'math': 130, 'english': 108, 'comprehensive': 204}
+[1456, 4782, 2134, 1012, 8547]
+blg 8130 20 male
+{'total': 514, 'chinese': 128, 'math': 97, 'english': 125, 'comprehensive': 164}
+[4587, 4782, 2125, 2145, 4897]
+mbeg 4692 18 female
+{'total': 603, 'chinese': 106, 'math': 95, 'english': 123, 'comprehensive': 279}
+[2125, 1012, 4587, 8547, 2134]
+nt 7575 20 male
+{'total': 580, 'chinese': 100, 'math': 117, 'english': 120, 'comprehensive': 243}
+[2125, 4782, 4587, 1012, 4897]
+gqjq 1605 19 male
+{'total': 530, 'chinese': 141, 'math': 99, 'english': 128, 'comprehensive': 162}
+[1012, 1456, 6985, 4897, 2125]
+pa 8948 18 male
+{'total': 534, 'chinese': 142, 'math': 81, 'english': 82, 'comprehensive': 229}
+[1456, 8547, 4782, 4897, 6985]
+fg 2611 19 male
+{'total': 512, 'chinese': 109, 'math': 100, 'english': 129, 'comprehensive': 174}
+[3526, 1543, 1234, 1012, 2125]
+fvg 2848 18 male
+{'total': 480, 'chinese': 80, 'math': 97, 'english': 131, 'comprehensive': 172}
+[4562, 2125, 1534, 1456, 1543]
+zrnuzz 7260 18 male
+{'total': 554, 'chinese': 139, 'math': 143, 'english': 113, 'comprehensive': 159}
+[2125, 5487, 4782, 4562, 1534]
+ta 6853 18 female
+{'total': 467, 'chinese': 115, 'math': 95, 'english': 85, 'comprehensive': 172}
+[6985, 1534, 3526, 1456, 4562]
+ymwy 8179 18 male
+{'total': 503, 'chinese': 100, 'math': 91, 'english': 145, 'comprehensive': 167}
+[1234, 1543, 1456, 2145, 4897]
+mcegv 3389 18 female
+{'total': 568, 'chinese': 118, 'math': 100, 'english': 141, 'comprehensive': 209}
+[2145, 1012, 2125, 2134, 4562]
+yhur 6262 20 female
+{'total': 648, 'chinese': 123, 'math': 139, 'english': 123, 'comprehensive': 263}
+[4897, 1012, 8547, 5487, 1234]
+kjmqbh 4123 19 male
+{'total': 598, 'chinese': 121, 'math': 136, 'english': 145, 'comprehensive': 196}
+[1534, 8547, 6985, 5487, 2134]
+tam 5916 18 female
+{'total': 642, 'chinese': 141, 'math': 135, 'english': 121, 'comprehensive': 245}
+[1543, 1534, 2145, 6985, 1012]
+oe 3144 19 female
+{'total': 599, 'chinese': 124, 'math': 141, 'english': 111, 'comprehensive': 223}
+[1534, 6985, 1234, 4562, 1456]
+fm 2818 18 male
+{'total': 572, 'chinese': 115, 'math': 140, 'english': 114, 'comprehensive': 203}
+[1534, 2125, 6985, 1456, 4897]
+piqvc 2877 18 female
+{'total': 541, 'chinese': 118, 'math': 80, 'english': 115, 'comprehensive': 228}
+[4562, 6985, 5487, 3526, 1234]
+nspxuv 2633 20 female
+{'total': 582, 'chinese': 110, 'math': 134, 'english': 84, 'comprehensive': 254}
+[4562, 4782, 1534, 1543, 2125]
+mc 2282 20 female
+{'total': 590, 'chinese': 84, 'math': 132, 'english': 110, 'comprehensive': 264}
+[1534, 8547, 4897, 4782, 2145]
+oicieq 8203 18 female
+{'total': 537, 'chinese': 81, 'math': 83, 'english': 84, 'comprehensive': 289}
+[4782, 1234, 2134, 3526, 2145]
+nbn 4708 19 female
+{'total': 569, 'chinese': 142, 'math': 134, 'english': 82, 'comprehensive': 211}
+[2134, 1534, 1012, 1234, 2125]
+bego 9073 18 female
+{'total': 598, 'chinese': 145, 'math': 137, 'english': 102, 'comprehensive': 214}
+[6985, 4782, 3526, 1543, 1456]
+cdlw 3291 19 female
+{'total': 655, 'chinese': 148, 'math': 101, 'english': 144, 'comprehensive': 262}
+[3526, 5487, 1234, 1534, 4782]
+vpd 3075 18 male
+{'total': 570, 'chinese': 113, 'math': 148, 'english': 108, 'comprehensive': 201}
+[4562, 8547, 6985, 2134, 4587]
+zdru 5788 19 female
+{'total': 598, 'chinese': 126, 'math': 88, 'english': 90, 'comprehensive': 294}
+[3526, 1534, 1234, 4587, 2134]
+yqg 5332 19 male
+{'total': 566, 'chinese': 148, 'math': 86, 'english': 86, 'comprehensive': 246}
+[1456, 2125, 4587, 1534, 2145]
+wtpgvp 9230 18 male
+{'total': 605, 'chinese': 141, 'math': 150, 'english': 114, 'comprehensive': 200}
+[2145, 1456, 6985, 1534, 4587]
+vpzllm 8827 19 male
+{'total': 637, 'chinese': 141, 'math': 88, 'english': 147, 'comprehensive': 261}
+[2134, 1534, 8547, 4782, 6985]
+ymmhs 9939 20 male
+{'total': 585, 'chinese': 97, 'math': 98, 'english': 98, 'comprehensive': 292}
+[5487, 4897, 4587, 4562, 4782]
+qsgjri 9477 18 female
+{'total': 529, 'chinese': 89, 'math': 138, 'english': 114, 'comprehensive': 188}
+[5487, 4562, 4587, 2134, 2125]
+cxir 8252 20 female
+{'total': 453, 'chinese': 108, 'math': 105, 'english': 81, 'comprehensive': 159}
+[4782, 5487, 1234, 4897, 1012]
