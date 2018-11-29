@@ -125,30 +125,51 @@ class MaxHeap(object):
             index = j 
             j = (index << 1) + 1 
 
-#=========================bjutAdmit=================================
-def bjutAdmit(stuHeapify, school):
-    admitNum = 0
-    for major in school.major:
-        #计数
-        admitNum += major.MajorNum 
-    while admitNum > 0 and stuHeapify.size() > 0:
-        tmpStu = stuHeapify.pop()
-        tmpWill = []
-        for will in tmpStu.will:
-            tmpWill.append(will)
-        while tmpStu.isAdmit is False:                
-            if len(tmpWill) == 0:
-                #所报志愿均满员
-                retryHeap.add(tmpStu)
-                break
-            else:           
-                op = tmpWill.pop(0)
-                for major in school.major:
-                    if op == major.MajorCode and major.isNotFull():
-                        tmpStu.isAdmit = True
-                        major.add(tmpStu)
-                        admitNum -= 1
+#=========================strategy mode=============================
+class AdmitStrategy(object):
+    #录取策略
+    def admit(self, stuHeapify, school):
+        pass
 
+class bjutAdmit(AdmitStrategy):
+    #分数优先，遵循志愿
+    def admit(self, stuHeapify, school):
+        admitNum = 0
+        for major in school.major:
+            #计数
+            admitNum += major.MajorNum 
+        while admitNum > 0 and stuHeapify.isEmpty() == 0:
+            tmpStu = stuHeapify.pop()
+            tmpWill = []
+            for will in tmpStu.will:
+                tmpWill.append(will)
+            while tmpStu.isAdmit is False:                
+                if len(tmpWill) == 0:
+                    #所报志愿均满员
+                    retryHeap.add(tmpStu)
+                    break
+                else:           
+                    op = tmpWill.pop(0)
+                    for major in school.major:
+                        if op == major.MajorCode and major.isNotFull():
+                            tmpStu.isAdmit = True
+                            major.add(tmpStu)
+                            admitNum -= 1
+
+class scuAdmit(AdmitStrategy):
+    #专业级差
+    def admit(self, stuHeapify, school):
+        pass
+
+class Context(object):
+    def __init__(self, AdmitStrategy):
+        self.AdmitStrategy = AdmitStrategy
+
+    def set_AdmitStrategy(self, AdmitStrategy):
+        self.AdmitStrategy = AdmitStrategy
+    
+    def admit(self, stuHeapify, school):
+        return self.AdmitStrategy.admit(stuHeapify, school)
 #===============================gui=================================
 #重写的多列listbox
 class MultiListbox(Frame): 
@@ -257,30 +278,63 @@ class CreatWindow(Frame):
         self.Msgframe = LabelFrame(root, height = 670, width = 1590, text = 'information', padx = 10, pady = 10)
         self.Msgframe.pack_propagate(0)
         self.Msgframe.pack()                        
-        self.Cmdframe = LabelFrame(root, height = 220, width = 1590, text = 'command', padx = 10, pady = 10)
+        self.Cmdframe = LabelFrame(root, height = 220, width = 1270, text = 'command', pady = 10)
         self.Cmdframe.pack_propagate(0)
-        self.Cmdframe.pack()                                   
+        self.Cmdframe.pack(side = 'right')
+        self.ModeFrame = LabelFrame(root, height = 220, width = 350, text = 'set mode', padx = 10 , pady = 10) 
+        self.ModeFrame.pack_propagate(0)   
+        self.ModeFrame.pack(side = 'left')                               
 
         #information--------列表框
-        self.listbox0 = MultiListbox(self.Msgframe, [['INFORMATION',10]])
+        self.listbox0 = MultiListbox(self.Msgframe, [['INFORMATION',50]])
         self.listbox0.pack(expand=YES, fill=BOTH, side = LEFT)
         self.listbox1 = MultiListbox(self.Msgframe, (('ID', 5), ('Name', 5), ('Age', 3), ('sex', 6), ('Total', 5), ('Chinese', 5), ('Math', 5), ('English', 5), ('Comp', 5), ('Will', 20)))      
         self.listbox1.pack(expand=YES, fill=BOTH, side = RIGHT)
         #command------------button
+        self.mbtn0 = Button(self.ModeFrame, text = 'Grade\nPriority', width = 15, height = 5, command = self.mbtn0Inf, state = DISABLED)
+        self.mbtn0.pack(pady = 20)
+        self.mbtn1 = Button(self.ModeFrame, text = 'Major\nDifferential', width = 15, height = 5, command = self.mbtn1Inf)
+        self.mbtn1.pack()
         self.btn0 = Button(self.Cmdframe, text = 'School\nInformation', width = 15, height = 5, command = self.btn0Inf)
-        self.btn0.grid(row = 0,column = 0, padx = 40, pady = 60)        
+        self.btn0.grid(row = 0, column = 0, padx = 40, pady = 60)        
         self.btn1 = Button(self.Cmdframe, text = 'Student\nInformation', width = 15, height = 5, command = self.btn1Inf)
-        self.btn1.grid(row = 0,column = 1, padx = 40, pady = 60)       
-        self.btn2 = Button(self.Cmdframe, text = 'Preliminary\nResults', width = 15, height = 5, command = self.btn2Inf, state = DISABLED)
-        self.btn2.grid(row = 0,column = 2, padx = 40, pady = 60)
+        self.btn1.grid(row = 0, column = 1, padx = 40, pady = 60)       
         self.btn3 = Button(self.Cmdframe, text = 'Dispensing\nStudent', width = 15, height = 5, command = self.btn3Inf, state = DISABLED)
-        self.btn3.grid(row = 0,column = 3, padx = 40, pady = 60)
+        self.btn3.grid(row = 0, column = 3, padx = 40, pady = 60)
         self.btn4 = Button(self.Cmdframe, text = 'Retired\nStudent', width = 15, height = 5, command = self.btn4Inf, state = DISABLED)
-        self.btn4.grid(row = 0,column = 4, padx = 40, pady = 60)
+        self.btn4.grid(row = 0, column = 4, padx = 40, pady = 60)
         self.btn5 = Button(self.Cmdframe, text = 'Result\nof\nAdmission', width = 15, height = 5, command = self.btn5Inf, state = DISABLED)
-        self.btn5.grid(row = 0,column = 5, padx = 40, pady = 60)
-        self.btn6 = Button(self.Cmdframe, text = 'Exit', width = 15, height = 5, command = root.quit).grid(row = 0,column = 6, padx = 20, pady = 60) 
+        self.btn5.grid(row = 0, column = 2, padx = 40, pady = 60)
+        self.btn6 = Button(self.Cmdframe, text = 'Exit', width = 15, height = 5, command = root.quit).grid(row = 0, column = 5, padx = 20, pady = 60) 
     
+    def mbtn0Inf(self):
+        self.mbtn1['state'] = 'normal'
+        self.mbtn0['state'] = 'disabled'
+        self.btn3['state'] = 'disabled'
+        self.btn4['state'] = 'disabled'
+        self.btn5['state'] = 'disabled'
+        bjut = LoadSchInfo()
+        while tmpHeap.isEmpty == 0:
+            tmpHeap.pop()
+        for student in myClass:
+            tmpHeap.add(student)
+        admit = Context(bjutAdmit())
+        admit.admit(tmpHeap, bjut)
+    
+    def mbtn1Inf(self):
+        self.mbtn0['state'] = 'normal'
+        self.mbtn1['state'] = 'disabled'
+        self.btn3['state'] = 'disabled'
+        self.btn4['state'] = 'disabled'
+        self.btn5['state'] = 'disabled'
+        bjut = LoadSchInfo()
+        while tmpHeap.isEmpty == 0:
+            tmpHeap.pop()
+        for student in myClass:
+            tmpHeap.add(student)
+        admit = Context(scuAdmit())
+        admit.admit(tmpHeap, bjut)
+
     def btn0Inf(self): 
         self.listbox0.delete(0, END)
         self.listbox0.insert(END, ['SchoolCode:%s' %bjut.schCode], ['SchoolName:%s' %bjut.schName], ['MajorInformation:'], ['    code:name,num'])
@@ -289,7 +343,6 @@ class CreatWindow(Frame):
         messagebox.showinfo("Message","Operation succeeded!") #弹出消息窗口
         
     def btn1Inf(self):       
-        self.btn2['state'] = 'normal'
         self.btn3['state'] = 'normal'
         self.btn4['state'] = 'normal'
         self.btn5['state'] = 'normal'
@@ -297,21 +350,7 @@ class CreatWindow(Frame):
         self.listbox1.delete(0, END)
         for student in myClass:
             self.listbox1.insert(END, student.strIfo())
-        messagebox.showinfo("Message","Operation succeeded!") #弹出消息窗口        
-
-    def btn2Inf(self):
-        self.listbox0.delete(0, END)
-        self.listbox1.delete(0, END)
-        
-        for major in bjut.major:
-            self.listbox0.insert(END, ['MajorCode:%s' %major.MajorCode], ['MajorName:%s' %major.MajorName], ['less:%s' %major.MajorLess], [''])
-            for student in major.mates:
-                tmplist = student.strIfo()
-                tmplist.pop()
-                tmplist.append(str('%s' %major.MajorCode))
-                self.listbox1.insert(END, tmplist)
-        
-        messagebox.showinfo("Message","Operation succeeded!") #弹出消息窗口       
+        messagebox.showinfo("Message","Operation succeeded!") #弹出消息窗口              
 
     def btn3Inf(self):
         self.listbox1.delete(0, END)
@@ -338,9 +377,9 @@ class CreatWindow(Frame):
                 self.listbox1.insert(END, tmplist)
     
         messagebox.showinfo("Message","Operation succeeded!") #弹出消息窗口  
-                     
-#===============================main================================
-if __name__ == '__main__':  
+#=======================load information============================
+def LoadSchInfo():   
+    #load school information 
     f = open('/home/yanglin/homework/school information.txt', 'r')
     f_list = f.readline().strip().split()
     SchoolName = f_list.pop()
@@ -353,16 +392,19 @@ if __name__ == '__main__':
         MajorName = line_list.pop()
         MajorCode = int(line_list.pop())
         bjut.addMajor(MajorCode, MajorName, MajorNum, MajorLess)
-    f.close()
+    f.close()   
+    return bjut
 
+def LoadStuInfo():
+    #load student information
     f = open('/home/yanglin/homework/student information.txt', 'r')
     myClass = []
     f_list1 = f.readlines()
     while len(f_list1) > 0:
         basicinf = f_list1.pop(0).strip().split()
         name = basicinf.pop(0)
-        age = int(basicinf.pop(0))
         snum = int(basicinf.pop(0))
+        age = int(basicinf.pop(0))     
         sex = basicinf.pop(0)
         tmpstudent = StuIfo(name, age, snum, sex)
         tmpstudent.setFullscore(eval(f_list1.pop(0).strip()))
@@ -370,12 +412,18 @@ if __name__ == '__main__':
             tmpstudent.addWill(int(will))
         myClass.append(tmpstudent)
     f.close()
-    
+    return myClass
+#===============================main================================
+if __name__ == '__main__':  
+    bjut = LoadSchInfo()
+    myClass = LoadStuInfo()
     retryHeap = MaxHeap()
     tmpHeap = MaxHeap()
     for student in myClass:
        tmpHeap.add(student)
-    bjutAdmit(tmpHeap, bjut)
+    admit = Context(bjutAdmit())
+    admit.admit(tmpHeap, bjut)
+    #bjutAdmit(tmpHeap, bjut)
 
     root = Tk()
     root.title('学生志愿管理系统')
