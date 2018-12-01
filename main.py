@@ -38,7 +38,6 @@ class SchIfo(object):
     
     def setFullMajor(self, fullmajor):
         self.major = fullmajor
-
 #====================================student class====================
 class StuIfo(object):
     def __init__(self, name, age, snum, sex, isAdjust):
@@ -81,8 +80,7 @@ class StuIfo(object):
         for key in self.scores:
             tmpinf.append('%s' %(self.scores[key]))
         tmpinf.append('  '.join('%s' %id for id in self.will))
-        return tmpinf
-             
+        return tmpinf           
 #==========================myheap class=============================
 class MaxHeap(object): 
     def __init__(self): 
@@ -91,9 +89,6 @@ class MaxHeap(object):
 
     def size(self): 
         return self._count 
-        
-    def isEmpty(self): 
-        return self._count == 0 
 
     def add(self, item): # 插入元素入堆 
         self._data.append(item) 
@@ -129,30 +124,37 @@ class MaxHeap(object):
             self._data[index], self._data[j] = self._data[j], self._data[index] 
             index = j 
             j = (index << 1) + 1 
-
 #=========================strategy mode=============================
 class AdmitStrategy(object):
     #录取策略
-    def admit(self, stuHeapify, school):
+    def admit(self):
         pass
 
 class bjutAdmit(AdmitStrategy):
     #分数优先，遵循志愿
-    def admit(self, stuHeapify, school):
+    def admit(self):
+        for major in bjut.major:
+            major.mates = []
+            major.MajorLess = major.MajorNum
+        while tmpHeap.size() > 0:
+            tmpHeap.pop()
+        for student in myClass:
+            tmpHeap.add(deepcopy(student))
         while retireHeap.size() > 0:
             retireHeap.pop()
         while retryHeap.size() > 0:
             retryHeap.pop()
+
         admitNum = 0
-        for major in school.major:
+        for major in bjut.major:
             #计数
             admitNum += major.MajorNum 
-        while admitNum > 0 and stuHeapify.isEmpty() == 0:
-            tmpStu = stuHeapify.pop()
+        while admitNum > 0 and tmpHeap.size() > 0:
+            tmpStu = tmpHeap.pop()
             tmpWill = []
             for will in tmpStu.will:
                 tmpWill.append(will)
-            while tmpStu.isAdmit is False:                
+            while tmpStu.isAdmit is False: 
                 if len(tmpWill) == 0:
                     #所报志愿均满员
                     if tmpStu.isAdjust == 'yes':#服从调剂进入调剂堆
@@ -163,74 +165,71 @@ class bjutAdmit(AdmitStrategy):
                         break
                 else:           
                     op = tmpWill.pop(0)
-                    for major in school.major:
+                    
+                    for major in bjut.major:
                         if op == major.MajorCode and major.isNotFull():
                             tmpStu.isAdmit = True
                             major.add(tmpStu)
                             admitNum -= 1
-        while stuHeapify.size() > 0:#整合退档学生
-            retireHeap.add(stuHeapify.pop())
+        while tmpHeap.size() > 0:#整合退档学生
+            retireHeap.add(tmpStu.pop())
 
 class scuAdmit(AdmitStrategy):
     #专业级差
-    def admit(self, stuHeapify, school):
+    def admit(self):
+        for major in bjut.major:
+            major.mates = []
+            major.MajorLess = major.MajorNum
+        while tmpHeap.size() > 0:
+            tmpHeap.pop()
+        for student in myClass:
+            tmpHeap.add(deepcopy(student))
         while retireHeap.size() > 0:
             retireHeap.pop()
         while retryHeap.size() > 0:
             retryHeap.pop()
+
+        jicha = [0, 3, 4, 5, 6]
+        AdmitCount = 1
         tmpHeap1 = []
         tmpHeap1.append(MaxHeap())
-        for student in stuHeapify._data:
-            for major in school.major:
+        for student in tmpHeap._data:
+            for major in bjut.major:
                 if student.will[0] == major.MajorCode:
                     if major.isNotFull():
                         major.add(student)
                     else:
-                        student.scores['total'] -= 3
                         tmpHeap1[0].add(student)
         tmpHeap1.append(MaxHeap())
-        for student in tmpHeap1[0]._data:
-            for major in school.major:
-                if student.will[1] == major.MajorCode:
-                    if major.isNotFull():
-                        major.add(student)
-                    else:
-                        tmpStu = major.pop()
-                        if student > tmpStu:
-                            major.add(student)
-                            tmpStu.scores['total'] -= 3
-                            tmpHeap1[0].add(tmpStu)
-                        else:
-                            major.add(tmpStu)    
-                            student.scores['total'] -= 1
-                            tmpHeap1[1].add(student)
-        AdmitCount = 2
-        while AdmitCount < 5:
-            tmpHeap1.append(MaxHeap())
-            for student in tmpHeap1[AdmitCount - 1]._data:
-                for major in school.major:
+        tmpHeap1.append(MaxHeap())
+        tmpHeap1.append(MaxHeap())
+        tmpHeap1.append(MaxHeap())
+
+        while AdmitCount < 5:    
+            while tmpHeap1[AdmitCount - 1].size() > 0:
+                student = tmpHeap1[AdmitCount - 1].pop()
+                for major in bjut.major:
                     if student.will[AdmitCount] == major.MajorCode:
                         if major.isNotFull():
                             major.add(student)
                         else:
                             tmpStu = major.pop()
-                            if student > tmpStu:
+                            tmpjc = tmpStu.will.index(major.MajorCode)
+                            if student.scores['total'] - jicha[AdmitCount] > tmpStu.scores['total'] - tmpjc:
                                 major.add(student)
-                                tmpStu.scores['total'] -= 1
-                                tmpHeap1[AdmitCount - 1].add(tmpStu)
+                                tmpHeap1[tmpjc + 1].add(tmpStu)
                             else:
-                                major.add(tmpStu)    
-                                student.scores['total'] -= 1
-                                tmpHeap1[AdmitCount].add(student) 
-            AdmitCount += 1 
-        for item in tmpHeap1:
-            print(item._data)
-        tmplist = tmpHeap1.pop()
-        for student in tmplist._data:
-            if student.isAdjust == 'yes':
-                retryHeap.add(student)
-            else:
-                retireHeap.add(student)              
+                                major.add(tmpStu)
+                                tmpHeap1[AdmitCount].add(student)
+            AdmitCount += 1
+
+        #整合退档学生
+        for tmplist in tmpHeap1:
+            for student in tmplist._data:
+                if student.isAdjust == 'yes':
+                    retryHeap.add(student)
+                else:
+                    retireHeap.add(student)              
 
 class Context(object):
     def __init__(self, AdmitStrategy):
@@ -239,8 +238,8 @@ class Context(object):
     def set_AdmitStrategy(self, AdmitStrategy):
         self.AdmitStrategy = AdmitStrategy
     
-    def admit(self, stuHeapify, school):
-        return self.AdmitStrategy.admit(stuHeapify, school)
+    def admit(self):
+        return self.AdmitStrategy.admit()
 #===============================gui=================================
 #重写的多列listbox
 class MultiListbox(Frame): 
@@ -362,13 +361,13 @@ class CreatWindow(Frame):
         self.listbox1 = MultiListbox(self.Msgframe, (('ID', 5), ('Name', 5), ('Age', 3), ('sex', 6), ('isAdjust',5), ('Total', 5), ('Chinese', 5), ('Math', 5), ('English', 5), ('Comp', 5), ('Will', 20)))      
         self.listbox1.pack(expand=YES, fill=BOTH, side = RIGHT)
         #command------------button
-        self.mbtn0 = Button(self.ModeFrame, text = 'Grade\nPriority', width = 15, height = 5, command = self.mbtn0Inf, state = DISABLED)
+        self.mbtn0 = Button(self.ModeFrame, text = 'Grade\nPriority', width = 15, height = 5, command = self.mbtn0Inf)
         self.mbtn0.pack(pady = 20)
         self.mbtn1 = Button(self.ModeFrame, text = 'Major\nDifferential', width = 15, height = 5, command = self.mbtn1Inf)
         self.mbtn1.pack()
-        self.btn0 = Button(self.Cmdframe, text = 'School\nInformation', width = 15, height = 5, command = self.btn0Inf)
+        self.btn0 = Button(self.Cmdframe, text = 'School\nInformation', width = 15, height = 5, command = self.btn0Inf, state = DISABLED)
         self.btn0.grid(row = 0, column = 0, padx = 40, pady = 60)        
-        self.btn1 = Button(self.Cmdframe, text = 'Student\nInformation', width = 15, height = 5, command = self.btn1Inf)
+        self.btn1 = Button(self.Cmdframe, text = 'Student\nInformation', width = 15, height = 5, command = self.btn1Inf, state = DISABLED)
         self.btn1.grid(row = 0, column = 1, padx = 40, pady = 60)       
         self.btn3 = Button(self.Cmdframe, text = 'Dispensing\nStudent', width = 15, height = 5, command = self.btn3Inf, state = DISABLED)
         self.btn3.grid(row = 0, column = 3, padx = 40, pady = 60)
@@ -381,32 +380,18 @@ class CreatWindow(Frame):
     def mbtn0Inf(self):
         self.mbtn1['state'] = 'normal'
         self.mbtn0['state'] = 'disabled'
-        self.btn3['state'] = 'disabled'
-        self.btn4['state'] = 'disabled'
-        self.btn5['state'] = 'disabled'
-        bjut = deepcopy(LoadSchInfo())
-        myClass = deepcopy(LoadStuInfo())
-        while tmpHeap.isEmpty == 0:
-            tmpHeap.pop()
-        for student in myClass:
-            tmpHeap.add(student)
+        self.btn0['state'] = 'normal'
+        self.btn1['state'] = 'normal'
         admit = Context(bjutAdmit())
-        admit.admit(tmpHeap, bjut)
+        admit.admit()
     
     def mbtn1Inf(self):
         self.mbtn0['state'] = 'normal'
         self.mbtn1['state'] = 'disabled'
-        self.btn3['state'] = 'disabled'
-        self.btn4['state'] = 'disabled'
-        self.btn5['state'] = 'disabled'
-        bjut = deepcopy(LoadSchInfo())
-        myClass = deepcopy(LoadStuInfo())
-        while tmpHeap.isEmpty == 0:
-            tmpHeap.pop()
-        for student in myClass:
-            tmpHeap.add(student)
+        self.btn0['state'] = 'normal'
+        self.btn1['state'] = 'normal'
         admit = Context(scuAdmit())
-        admit.admit(tmpHeap, bjut)
+        admit.admit()
 
     def btn0Inf(self): 
         self.listbox0.delete(0, END)
@@ -496,8 +481,6 @@ if __name__ == '__main__':
     tmpHeap = MaxHeap()
     for student in myClass:
        tmpHeap.add(student)
-    admit = Context(bjutAdmit())
-    admit.admit(tmpHeap, bjut)
 
     root = Tk()
     root.title('学生志愿管理系统')
